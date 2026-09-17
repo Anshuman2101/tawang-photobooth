@@ -61,23 +61,25 @@ export default function FinalScreen() {
       </header>
 
       <div className={styles.stage}>
-        <img
-          src={publicAsset('assets/camera/camera-print-screen.png')}
-          alt=""
-          className={styles.cameraGraphic}
-        />
-        <div
-          className={styles.photoWrap}
-          style={{
-            opacity: ejected ? 1 : 0,
-            // translateX(-50%) is the actual horizontal centering (paired with CSS left:50%);
-            // it must not be dropped in favour of relying on flex static-position centering alone.
-            transform: ejected
-              ? 'translateX(-50%) translateY(38%) scale(1)'
-              : 'translateX(-50%) translateY(-14%) scale(0.9)'
-          }}
-        >
-          {photoUrl && <img src={photoUrl} alt="Your composed photo" />}
+        <div className={styles.cameraFrame}>
+          <img
+            src={publicAsset('assets/camera/camera-print-screen.png')}
+            alt=""
+            className={styles.cameraGraphic}
+          />
+          <div
+            className={styles.photoWrap}
+            style={{
+              opacity: ejected ? 1 : 0,
+              // translateX(-50%) is the actual horizontal centering (paired with CSS left:50%);
+              // it must not be dropped in favour of relying on flex static-position centering alone.
+              transform: ejected
+                ? 'translateX(-50%) translateY(38%) scale(1)'
+                : 'translateX(-50%) translateY(-14%) scale(0.9)'
+            }}
+          >
+            {photoUrl && <img src={photoUrl} alt="Your composed photo" />}
+          </div>
         </div>
       </div>
 

@@ -91,6 +91,8 @@
 
 .frameThumb img {
   width: 100%;
+  aspect-ratio: 666 / 375;
+  object-fit: cover;
   display: block;
   border-radius: 8px;
   background: #f6efdd;

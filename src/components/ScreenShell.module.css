@@ -16,14 +16,28 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Give the phone-width card presence when previewed on a wide desktop screen.
+/* Give the phone-width card presence when previewed on a wider screen.
    No fixed height/overflow-hidden here on purpose: the shell always grows to
    fit its actual content, so nothing can ever be clipped -- if content is
-   taller than the viewport, the page simply scrolls. */
-@media (min-width: 520px) {
+   taller than the viewport, the page simply scrolls.
+
+   Three explicit tiers:
+   - Phone   (< 600px):  full-bleed, no card chrome (the real target device).
+   - Laptop  (600-1199px): centered phone-proportioned card, so a laptop
+     browser window doesn't stretch the layout edge-to-edge.
+   - Desktop (>= 1200px): a little more breathing room/size for large screens. */
+@media (min-width: 600px) {
   .shell {
+    max-width: 480px;
     margin-block: 24px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lifted);
+  }
+}
+
+@media (min-width: 1200px) {
+  .shell {
+    max-width: 520px;
+    margin-block: 40px;
   }
 }
