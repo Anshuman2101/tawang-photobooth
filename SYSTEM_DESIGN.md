@@ -5,6 +5,7 @@ Read this file first. It explains **what we are building and why**, before you l
 > Companion files:
 > - [TECH_STACK_AND_FLOWS.md](TECH_STACK_AND_FLOWS.md) — what technology is used, why, and how the screens/logic work.
 > - [README.md](README.md) — the one file with setup / run / debug / deploy steps.
+> - [docs/SYSTEM_DESIGN.drawio](docs/SYSTEM_DESIGN.drawio) — the diagrams below (Architecture + User Flow) as an editable draw.io file. Open it for free at [app.diagrams.net](https://app.diagrams.net) (File → Open From → Device) or with the "Draw.io Integration" VS Code extension.
 
 > **v2 update:** the project was rebuilt from plain HTML/CSS/JS to **React + Vite** at your request, for better code quality and maintainability. This version also fixes a real bug found in the v1 build (the camera preview could get stuck hidden behind an error panel after granting permission) and uses a fresh visual design — see Section 6.
 
@@ -94,6 +95,8 @@ These constants live in one place in the code (`src/data/frames.js`) so they are
 
 ## 6. High-level architecture (React)
 
+> Also available as an editable draw.io diagram: [docs/SYSTEM_DESIGN.drawio](docs/SYSTEM_DESIGN.drawio), "Architecture" tab.
+
 ```mermaid
 flowchart TD
     A[main.jsx] --> B["App.jsx\n(SessionProvider + screen router)"]
@@ -132,6 +135,8 @@ There is no routing library — with only 4 screens in one linear flow, the curr
 ---
 
 ## 8. User Flow Diagram
+
+> Also available as an editable draw.io diagram: [docs/SYSTEM_DESIGN.drawio](docs/SYSTEM_DESIGN.drawio), "User Flow" tab.
 
 This is the full visitor journey end-to-end, including the error/retake/restart branches (not just the "happy path"):
 

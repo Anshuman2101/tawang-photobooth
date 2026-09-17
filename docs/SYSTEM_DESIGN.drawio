@@ -1,0 +1,163 @@
+<mxfile host="app.diagrams.net" agent="tawang-photobooth" version="24.7.0" type="device">
+  <diagram id="architecture" name="Architecture">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="a-main" value="main.jsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="30" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-app" value="App.jsx&#10;(SessionProvider + screen router)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="120" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-welcome" value="WelcomeScreen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a-options" value="OptionsScreen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="250" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a-camera" value="CameraScreen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="250" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a-final" value="FinalScreen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="250" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-session" value="SessionContext&#10;(photoCount, frame, filter, photos, screen)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="360" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-usecamera" value="useCamera hook&#10;(getUserMedia + readiness check)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="460" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a-capture" value="capturePhoto()&#10;video frame -&gt; canvas -&gt; PNG (+ filter)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="670" y="460" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-compose" value="composeFinalImage()&#10;photos + frame PNG -&gt; canvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="670" y="560" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-frames" value="frames.js&#10;frame asset paths + measured photo-slot geometry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="230" y="560" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a-download" value="canvas.toBlob()&#10;-&gt; PNG download" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="660" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e-a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-main" target="a-app"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-app" target="a-welcome"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-app" target="a-options"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-app" target="a-camera"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-app" target="a-final"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e-a6" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-camera" target="a-usecamera"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a7" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-camera" target="a-capture"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a8" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-final" target="a-compose"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a9" value="reads slots" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-compose" target="a-frames"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a10" value="reads paths" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" edge="1" parent="1" source="a-options" target="a-frames"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="a-compose" target="a-download"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e-a12" value="shared state" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="a-session" target="a-welcome"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="a-session" target="a-options"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="a-session" target="a-camera"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e-a15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="a-session" target="a-final"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="userflow" name="User Flow">
+    <mxGraphModel dx="1200" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="f1" value="Visitor scans exhibition QR code" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="340" y="20" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="Welcome Screen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="110" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" value="Options Screen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="200" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" value="Camera Screen opens&#10;useCamera().start()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" value="Camera permission&#10;granted?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="380" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" value="Show plain-language error&#10;+ Try Again button" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="390" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f7" value="Live mirrored preview" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="490" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f8" value="3-2-1 countdown ring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="580" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f9" value="Capture frame -&gt; canvas&#10;(B&amp;W filter applied if selected)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="670" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f10" value="Photo added to filmstrip" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="760" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f11" value="photos.length ==&#10;photoCount?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="850" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f12" value="Camera stream stopped" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="950" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f13" value="Visitor taps &#215; on a thumbnail&#10;-&gt; photo removed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="765" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f14" value="Final Screen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1040" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f15" value="composeFinalImage():&#10;photos + frame PNG -&gt; canvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1130" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f16" value="Photo animates in&#10;(print-eject effect)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1220" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f17" value="Visitor action" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1310" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f18" value="canvas.toBlob() -&gt; PNG&#10;saved to visitor's device" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="1315" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f19" value="resetSession()&#10;-&gt; back to Welcome" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1315" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ef1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f1" target="f2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef2" value="Tap Enter&#10;(resetSession)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f2" target="f3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef3" value="All 3 chosen -&gt; Continue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f3" target="f4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f4" target="f5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef5" value="Denied / no camera / not HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f5" target="f6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef6" value="Try Again" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f6" target="f4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef7" value="Granted" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f5" target="f7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef8" value="Tap Take Photo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f7" target="f8"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f8" target="f9"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f9" target="f10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f10" target="f11"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef12" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f11" target="f7"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="240" y="885" /><mxPoint x="240" y="515" /></Array></mxGeometry></mxCell>
+        <mxCell id="ef13" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f11" target="f12"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef14" value="Tap &#215; on thumbnail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" edge="1" parent="1" source="f10" target="f13"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" edge="1" parent="1" source="f13" target="f7"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="750" y="530" /></Array></mxGeometry></mxCell>
+        <mxCell id="ef16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f12" target="f14"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f14" target="f15"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f15" target="f16"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f16" target="f17"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef20" value="Download" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f17" target="f18"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f18" target="f17"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="900" y="1290" /></Array></mxGeometry></mxCell>
+        <mxCell id="ef22" value="Start Over" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f17" target="f19"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ef23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="f19" target="f2"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="180" y="140" /></Array></mxGeometry></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
