@@ -16,13 +16,14 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Give the phone-width card presence when previewed on a wide desktop screen */
+/* Give the phone-width card presence when previewed on a wide desktop screen.
+   No fixed height/overflow-hidden here on purpose: the shell always grows to
+   fit its actual content, so nothing can ever be clipped -- if content is
+   taller than the viewport, the page simply scrolls. */
 @media (min-width: 520px) {
   .shell {
-    min-height: min(100dvh, 900px);
-    margin-block: max(0px, calc((100dvh - 900px) / 2));
+    margin-block: 24px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lifted);
-    overflow: hidden;
   }
 }

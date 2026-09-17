@@ -6,8 +6,8 @@
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
-  max-height: 52dvh;
-  max-height: 52vh;
+  max-height: 440px;
+  flex-shrink: 0;
   background: #000;
   overflow: hidden;
   border-bottom: 3px solid var(--gold);
@@ -143,5 +143,5 @@
 }
 
 @media (max-height: 700px) {
-  .viewport { max-height: 44dvh; max-height: 44vh; }
+  .viewport { max-height: 320px; }
 }

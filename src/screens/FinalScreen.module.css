@@ -33,6 +33,7 @@
 
 .photoWrap {
   position: absolute;
+  left: 50%;
   width: 60%;
   max-width: 270px;
   aspect-ratio: 666 / 375;

@@ -70,7 +70,11 @@ export default function FinalScreen() {
           className={styles.photoWrap}
           style={{
             opacity: ejected ? 1 : 0,
-            transform: ejected ? 'translateY(38%) scale(1)' : 'translateY(-14%) scale(0.9)'
+            // translateX(-50%) is the actual horizontal centering (paired with CSS left:50%);
+            // it must not be dropped in favour of relying on flex static-position centering alone.
+            transform: ejected
+              ? 'translateX(-50%) translateY(38%) scale(1)'
+              : 'translateX(-50%) translateY(-14%) scale(0.9)'
           }}
         >
           {photoUrl && <img src={photoUrl} alt="Your composed photo" />}
