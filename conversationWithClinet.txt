@@ -1,0 +1,75 @@
+Here is the translated and structured script of your audio query, formatted cleanly into a **Developer Requirement Script** so you can easily feed it directly to your Copilot AI agent.
+
+---
+
+### **Project Script & Developer Brief: Interactive Photo Booth Web App**
+
+**Project Context:**
+This project is an interactive installation for a 3-week course finale. The physical space is a lecture hall/projector setup focused on the theme of **Tawang Buddhist Culture**. Following the physical/sensory installation, the user journey ends with a **Digital Photo Booth Web App** accessed via a QR code.
+
+---
+
+### **1. Core User Flow & Screens (4–6 UI Screens)**
+
+1. **Screen 1: Welcome Screen**
+* Landing page introducing the photo booth.
+
+
+2. **Screen 2: Photo Layout Selection**
+* User selects the layout/number of photos: **2 Photos**, **3 Photos**, or **4 Photos**.
+
+
+3. **Screen 3: Frame Selection**
+* User selects 1 out of 4 custom-designed frame variations matching their chosen photo count.
+
+
+4. **Screen 4: Filter Selection**
+* User chooses a live camera filter: **Color** or **Black & White**.
+
+
+5. **Screen 5: Interactive Camera Capture**
+* Live camera stream feed.
+* *Feature:* Countdown timer before each photo trigger (or manual button-press trigger).
+* Visual animated feedback showing the taken picture "popping out" or sliding out like a printout.
+
+
+6. **Screen 6: Final Result & Download**
+* Display compiled photos inside the chosen frame.
+* Option to save or download the composite image.
+
+
+
+---
+
+### **2. Technical & Infrastructure Requirements**
+
+* **Hosting & Deployment:**
+* Must be deployed via **GitHub Pages** (free hosting).
+* **HTTPS Enforcement:** Mandatory, as mobile browsers block camera permissions (`navigator.mediaDevices.getUserMedia`) over insecure `http://`.
+
+
+* **Prototyping Environment:**
+* Target platform: **Anti-Gravity / Cursor** (token-efficient workflow due to API limits).
+* Standard HTML5, CSS3, and vanilla JavaScript (or lightweight React/Vue) to ensure zero backend cost and easy static deployment.
+
+
+* **Camera Access:**
+* Client-side HTML5 WebRTC API for camera stream access (no paid external server required for basic photo capture).
+
+
+
+---
+
+### **3. Key Technical Questions & Advice Needed**
+
+1. **API Requirement:**
+* Is an external API actually necessary for taking photos, rendering frame composites, and applying basic B&W filters?
+* *Expert Advice:* **No external paid API is needed.** You can handle camera streaming, canvas-based photo capture, layout rendering, and B&W filters 100% locally on the browser using HTML5 `<canvas>` and JavaScript.
+
+
+2. **Free API Alternatives (If Cloud Processing/Effects are required):**
+* What are free or open-source API alternatives for web camera manipulation or photo canvas rendering if local canvas handling isn't enough?
+
+
+
+---

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Tawang Photobooth v2 — Global styles & design tokens
+   A dark "museum at night" theme: warm charcoal + gold + maroon, with the
+   supplied Thangka-style artwork displayed like framed pieces on a dark wall.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink-950: #120d0a;
+  --ink-900: #1b140f;
+  --ink-800: #251c15;
+  --ink-700: #34281d;
+  --ink-600: #453527;
+
+  --cream: #f4ead4;
+  --cream-dim: #cdbfa0;
+
+  --gold: #d4a94a;
+  --gold-soft: #ecd8a1;
+  --gold-deep: #a97f2e;
+
+  --maroon: #9a3140;
+  --maroon-deep: #6a1b25;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.35);
+  --shadow-lifted: 0 16px 40px rgba(0, 0, 0, 0.45);
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Cambria', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 15% -10%, rgba(154, 49, 64, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 100% 110%, rgba(212, 169, 74, 0.12) 0%, transparent 50%),
+    linear-gradient(160deg, var(--ink-950) 0%, var(--ink-900) 55%, var(--ink-950) 100%);
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--gold-soft);
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,46 @@
+.btn {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 16px 30px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.primary {
+  background: linear-gradient(180deg, var(--gold) 0%, var(--gold-deep) 100%);
+  color: var(--ink-950);
+  box-shadow: var(--shadow-card);
+}
+
+.primary:hover:not(:disabled) {
+  box-shadow: var(--shadow-lifted);
+}
+
+.primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--gold-soft);
+  border: 2px solid var(--gold-deep);
+}
+
+.secondary:hover {
+  background: rgba(212, 169, 74, 0.08);
+}
+
+.sticky {
+  position: sticky;
+  bottom: 18px;
+  margin: 14px 22px 0;
+}
